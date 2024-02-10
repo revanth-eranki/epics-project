@@ -1,62 +1,30 @@
-<!---Thanks to undraw-->
+{% extends "base-login-register.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Webpage !</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'style-login.css' %}">
-    <!-- <script src="https://kit.fontawesome.com/a81368914c.js"></script> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  </head>
-  <body>
-    <div class="login-content">
-      <div class="container">
-        <div class="img">
-          <img src="{% static 'pc.svg' %}" />
-        </div>
-        <div class="login-container">
-          <form action="login" method="post">
-            {% csrf_token %}
-            <img class="avator" src="{% static 'avator.svg' %}" />
-            <h2>Howdy, Join us</h2>
-            <div class="input-div" one>
-              <div class="i">
-                <i class="fas fa-user"></i>
-              </div>
-              <div>
-                <input name='username' class="input" type="text" placeholder="Username" />
-              </div>
-            </div>
-            <div class="input-div" two>
-              <div class="i">
-                <i class="fas fa-lock"></i>
-              </div>
-              <div>
-                <input name='password' class="input" type="password" placeholder="Password"/>
-              </div>
-            </div>
-            <a href="#">Forgot password ?</a>
-            <a href="{% url 'register' %}">New User? Register here</a>
-            <a href="{% url 'home' %">
-              <input type="submit" class="btn" value="Login" />
-          </a>
-          <div>
-            {% for message in messages  %}
-            <script>alert('{{ message }}');</script>
-            
-            {% endfor %}
-        </div>
-          
-          </form>
-        </div>
-      </div>
-    </div>
-    <footer>
-      Copyright © 2024 - All rights Reserved - Designed by Studnet
-    </footer>
-    <!-- <script type="text/javascript" src="js/main.js"></script> -->
-  </body>
-</html>
+{% block form-action %}
+<form action="login" method="post">
+{% endblock %}
+
+{% block fields %}
+<img class="avator" src="{% static 'avator.svg' %}" />
+<h2>Howdy, Join us</h2>
+<div class="input-div" one>
+  <div class="i">
+    <i class="fas fa-user"></i>
+  </div>
+  <div>
+    <input name='username' class="input" type="text" placeholder="Username" />
+  </div>
+</div>
+<div class="input-div" two>
+  <div class="i">
+    <i class="fas fa-lock"></i>
+  </div>
+  <div>
+    <input name='password' class="input" type="password" placeholder="Password"/>
+  </div>
+</div>
+<a href="#">Forgot password ?</a>
+<a href="{% url 'register' %}">New User? Register here</a>
+<button type="submit" class="btn btn-primary mb-2">Login</button>
+{% endblock %}

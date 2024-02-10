@@ -1,41 +1,29 @@
-/*=======================================================
-	
-                   G o o d L u c k
-
-=========================================================*/
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+body {
+  background: linear-gradient(to right, #4ca2cd, #67B26F);
+  font-family: 'Lato', sans-serif;
+  border: 2px solid red;
+  /* display: flex;
+  flex-direction: column; */
 }
 
-body {
-  background: #67B26F;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  padding: 0;
-  margin: 0;
-  font-family: 'Lato', sans-serif;
-  color: #000;
+.body-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .container {
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 7rem;
-  padding: 0 2rem;
-}
-.img {
+  padding-top: 20px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }
+
 .img img {
-  width: 500px;
+  display: flex;
+  max-width: 100%;
 }
+
 .login-container {
   display: flex;
   align-items: center;
@@ -44,6 +32,7 @@ body {
 
 .avator {
   width: 100px;
+  flex: 1 0 auto;
 }
 
 form {
@@ -61,11 +50,12 @@ form h2 {
 .input-div {
   position: relative;
   display: grid;
-  grid-template-columns: 7% 93%;
-  margin: 25px 0;
+  grid-template-columns: 2% 98%;
+  margin: 15px 0;
   padding: 5px 0;
   border-bottom: 2px solid #d9d9d9;
 }
+
 .input-div:after,
 .input-div::before {
   content: "";
@@ -83,29 +73,29 @@ form h2 {
 .input-div::before {
   left: 50%;
 }
+
 .input-div.focus .i i {
   color: #5557ec;
 }
+
 .input-div.focus div h5 {
   top: -5px;
   font-size: 15px;
 }
+
 .input-div.focus:after,
 .input-div.focus:before {
   width: 50%;
 }
+
 .input-div.one {
   margin-top: 0;
 }
+
 .input-div.two {
   margin-top: 4px;
 }
 
-.i {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .i i {
   color: #d9d9d9;
   transition: 0.3s;
@@ -135,13 +125,11 @@ form h2 {
   border: none;
   outline: none;
   background: none;
-  padding: 0.5rem 0.7rem;
+  /* padding: 0.5rem 0.7rem; */
   font-size: 1.2rem;
   color: #f2f2f2;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-
 
 a {
   display: block;
@@ -151,15 +139,16 @@ a {
   font-size: 0.9rem;
   transition: 0.3s;
 }
+
 a:hover {
   color: #5557ec;
 }
+
 .btn {
-  display: block;
   width: 100%;
   height: 50px;
   border-radius: 25px;
-  margin: 1rem 0;
+  margin-top: 10px;
   font-size: 1.2rem;
   outline: none;
   border: none;
@@ -178,14 +167,17 @@ a:hover {
 
 footer {
   width: 100%;
+  margin-top: 15px;
   background-color: #32323267;
   color: #f2f2f2;
   height: 8vh;
   text-align: center;
   padding-top: 3vh;
   padding-bottom: 1vh;
+  display: flex;
+  justify-content: center;
 }
-/* important part for any devices */
+/* 
 @media screen and (max-width: 1050px) {
   .container {
     grid-gap: 5rem;
@@ -193,12 +185,8 @@ footer {
   body {
     background-color: rgb(86, 153, 216);
   }
-  form h2 {
-    color: whitesmoke;
-  }
-  .input-div > div h5 {
-    color: snow;
-  }
+  form h2,
+  .input-div > div h5,
   a {
     color: snow;
   }
@@ -218,16 +206,13 @@ footer {
   body {
     background-color: blueviolet;
   }
-  form h2 {
-    color: whitesmoke;
-  }
-  .input-div > div h5 {
-    color: snow;
-  }
+  form h2,
+  .input-div > div h5,
   a {
     color: snow;
   }
 }
+
 @media screen and (max-width: 900px) {
   .img {
     display: none;
@@ -246,15 +231,9 @@ footer {
   body {
     background-color: black;
   }
-  form h2 {
-    color: whitesmoke;
-  }
-  .input-div > div h5 {
-    color: snow;
-  }
+  form h2,
+  .input-div > div h5,
   a {
     color: snow;
   }
-}
-
-/*=========== T H A N K   Y O U =============*/
+} */
