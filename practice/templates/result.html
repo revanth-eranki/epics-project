@@ -1,37 +1,22 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Results</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'style-result.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
+{% block title %}
+<title>Student Results</title>
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'style-result.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-
-<body>
-    <header>
-        <div class="header-logo">
-            <img src="{% static 'national_institute_of_technology_andhra_pradesh_logo.jpeg' %}" alt="NIT AP Logo">
-        </div>
-        <h1 class="header-title">NIT AP Student Portal</h1>
-        <nav>
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'result' %}">Result</a></li>
-                <li><a href="{% url 'profile' %}">Profile</a></li>
-                <li><a href="{% url 'login' %}">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
+{% endblock %}
+{% block body %}
+    <main>
         <div class="container">
             <h1 class="title">Semester Results and Analytics</h1>
     
-            <div class="button-container">
-                <button class="semester-button active" data-section="results">Results</button>
-                <button class="semester-button" data-section="analytics">Analytics</button>
-            </div>
+            <nav class="nav nav-pills nav-justified">
+                <a class="nav-link active" aria-current="page" href="#">Results</a>
+                <a class="nav-link active" aria-current="page" href="#">Analytics</a>
+            </nav>
     
             <div id="results-section" class="section active">
                 <p class="section-text">Select your semester to view results:</p>
@@ -44,5 +29,5 @@
                 <div id="results-container"></div>
             </div>
         </div>
-    </body>
-</html>
+    </main>
+{% endblock %}

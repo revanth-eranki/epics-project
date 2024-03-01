@@ -1,7 +1,6 @@
 body {
   background: linear-gradient(to right, #4ca2cd, #67B26F);
   font-family: 'Lato', sans-serif;
-  border: 2px solid red;
   /* display: flex;
   flex-direction: column; */
 }
