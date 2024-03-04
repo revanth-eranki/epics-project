@@ -13,10 +13,24 @@
         <div class="container">
             <h1 class="title">Semester Results and Analytics</h1>
     
-            <nav class="nav nav-pills nav-justified">
-                <a class="nav-link active" aria-current="page" href="#">Results</a>
-                <a class="nav-link active" aria-current="page" href="#">Analytics</a>
-            </nav>
+            <!-- <ul class="nav nav-pills nav-justified">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Results</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Analytics</a>
+                </li>
+            </ul> -->
+
+            <div class="tab-container">
+                <input type="radio" name="slider" id="resulttab" checked>
+                <input type="radio" name="slider" id="analytictab">
+                <nav>
+                    <label for="resulttab" class="resulttab">Result</label>
+                    <label for="analytictab" class="analytictab">Analytics</label>
+                    <div class="slider"></div>
+                </nav>
+            </div>
     
             <div id="results-section" class="section active">
                 <p class="section-text">Select your semester to view results:</p>

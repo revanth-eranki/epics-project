@@ -7,120 +7,179 @@ body {
     font-family: 'Lato', sans-serif;
     color: #000;
   }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #f2f2f2;
-      padding: 10px;
-      border-bottom: 1px solid #ccc;
-    }
-    
-    .header-logo {
-      margin-right: 10px;
-    }
-    
-    .header-logo img {
-      /* Customize width, height, and styling as needed */
-      width: 75px;
-      height: 75px;
-      object-fit: cover;
-    }
-    
-    .header-title {
-      font-size: 1.8rem;
-      padding-left: 250px;
-    }
-    
-    nav {
-      display: flex; /* Remove inline display */
-    }
-    
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    
-    nav li {
-      display: inline-block; /* Make list items inline */
-      margin-right: 15px;
-    }
-    
-    nav li a {
-      text-decoration: none;
-      color: #333;
-      padding: 10px 15px; /* Add some padding for spacing */
-    }
-    
-    nav li a:hover {
-      color: #007bff;
-    }
-  .container {
-      max-width: 800px; /* Adjust as needed */
-      margin: 0 auto;
-      background-color: transparent; /* Subtle background */
-  }
-  
-  .title {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 2em;
-      margin: 20px 0;
-      text-align: center;
-      font-weight: 300; /* Lighter heading weight */
-  }
-  
-  .button-container,
-  .results-button-container,
-  .analytics-button-container {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-  }
-  
-  
-  .semester-button,
-  .results-button,
-  .analytics-button {
-      background-color: #6264c9; /* Customize primary color */
-      border: none;
-      color: white;
-      padding: 15px 30px; /* Adjust padding for larger buttons */
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 5px 3px;
-      border-radius: 4px;
-      cursor: pointer;
-      width: calc(48% - 8px); /* Adjust width for 2 buttons */
-      box-shadow: 0 2px 5px rgba(97, 112, 141, 0.1); /* Subtle button shadow */
-  }
-  .results-button a{
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-logo {
+  margin-right: 10px;
+}
+
+.header-logo img {
+  /* Customize width, height, and styling as needed */
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+}
+
+.header-title {
+  font-size: 1.8rem;
+  padding-left: 250px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title,
+.tab-container,
+#results-section {
+  border: 2px solid red;
+}
+
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: 300;
+}
+
+.tab-container {
+  max-width: 1080px;
+  width: 100%;
+  padding: 30px 10px;
+  display: flex;
+  flex-direction: column;;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab-container nav {
+  position: relative;
+  height: 50px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.tab-container nav::after {
+  content: "";
+  background: silver;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 45px;
+  z-index: 0;
+  filter: blur(0.5px);
+}
+
+.tab-container nav::before{
+  position: absolute;
+  content: "";
+  background: white;
+  width: 50%;
+  height: 5px;
+  top: 43px;
+  left: 0;
+  z-index: 1;
+  border-radius: 8px;
+  transition: 0.3s all ease;
+}
+
+.tab-container nav label {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+#resulttab:checked ~ nav::before{
+  left: 0%;
+}
+
+#analytictab:checked ~ nav::before{
+  left: 50%;
+}
+
+#resulttab:checked ~ nav .resulttab {
+  color: whitesmoke;
+}
+
+#analytictab:checked~nav .analytictab{
+  color: whitesmoke;
+}
+
+.button-container,
+.results-button-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.semester-button,
+.results-button{
+    background-color: #6264c9; 
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
     text-decoration: none;
-    color: #f2f2f2;
-  }
-  .semester-button:hover,
-  .results-button:hover,
-  .analytics-button:hover {
-      background-color: #3e8e41; /* Adjust hover color */
-  }
-  /* Update the default color for the active section button */
-  .section.active .semester-button {
-      background-color: #2196F3; /* Adjust to your desired color */
-  }
-  .semester-button:focus{
-    background: #e10b0bad;
-    outline: none;
-    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-       -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-            box-shadow: inset 0px 0px 5px #c1c1c1;
-  }
-  /* Keep the hover color consistent */
-  .section.active .semester-button:hover {
-      background-color: #1976D2; /* Darker shade of default color */
-  }
-  
-  .section {
-      padding: 20
-  }
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 3px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: calc(48% - 8px); 
+    box-shadow: 0 2px 5px rgba(97, 112, 141, 0.1); 
+}
+.results-button a{
+  text-decoration: none;
+  color: #f2f2f2;
+}
+.semester-button:hover,
+.results-button:hover{
+    background-color: #3e8e41;
+}
+/* Update the default color for the active section button */
+.section.active .semester-button {
+    background-color: #2196F3; /* Adjust to your desired color */
+}
+.semester-button:focus{
+  background: #e10b0bad;
+  outline: none;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+      -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+/* Keep the hover color consistent */
+.section.active .semester-button:hover {
+    background-color: #1976D2; /* Darker shade of default color */
+}
+
+.section {
+    padding: 20
+}
