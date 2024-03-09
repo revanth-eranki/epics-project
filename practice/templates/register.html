@@ -2,12 +2,34 @@
 {% load static %}
 
 {% block form-action %}
-<form action="register" method="post">
+<form action="register" method="POST" novalidate>
 {% endblock %}
 
 {% block fields %}
 <img class="avator" src="{% static 'avator.svg' %}" />
 <h2>Howdy, Join us</h2>
+
+{% for field in form %}
+  <div class="input-div">
+    <div class="i">
+      <i class="fas fa-user"></i>
+    </div>
+    <div class="input">
+      <p>
+        {% if field.errors %}
+          <ul class="errorlist">
+            {% for error in field.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </p>
+      {{ field.label_tag }} {{ field }}
+    </div>
+  </div>
+{% endfor %}
+
+<!-- 
 <div class="input-div" one>
     <div class="i">
       <i class="fas fa-user"></i>
@@ -64,6 +86,6 @@
 
 <p>
     Already have an account?<a href="{% url 'login' %}">Login</a>
-</p>
+</p> -->
 <button type="submit" class="btn btn-primary mb-2">Register</button>
 {% endblock %}
