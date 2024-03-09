@@ -11,10 +11,11 @@
 
 {% for field in form %}
   <div class="input-div">
-    <div class="i">
-      <i class="fas fa-user"></i>
-    </div>
     <div class="input">
+      <div class="input-fields">
+        {{ field.label_tag }} {{ field }}
+      </div>
+      <div class="field-line"></div>
       <p>
         {% if field.errors %}
           <ul class="errorlist">
@@ -24,7 +25,6 @@
           </ul>
         {% endif %}
       </p>
-      {{ field.label_tag }} {{ field }}
     </div>
   </div>
 {% endfor %}
@@ -83,9 +83,9 @@
       <input name='password2' class="input" type="password" placeholder="Re-type Password"/>
     </div>
 </div>
-
+-->
 <p>
     Already have an account?<a href="{% url 'login' %}">Login</a>
-</p> -->
+</p>
 <button type="submit" class="btn btn-primary mb-2">Register</button>
 {% endblock %}

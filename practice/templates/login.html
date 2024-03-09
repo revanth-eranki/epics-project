@@ -2,13 +2,13 @@
 {% load static %}
 
 {% block form-action %}
-<form action="login" method="post">
+<form action="login" method="POST" novalidate>
 {% endblock %}
 
 {% block fields %}
 <img class="avator" src="{% static 'avator.svg' %}" />
 <h2>Howdy, Join us</h2>
-<div class="input-div" one>
+<!-- <div class="input-div" one>
   <div class="i">
     <i class="fas fa-user"></i>
   </div>
@@ -23,7 +23,25 @@
   <div>
     <input name='password' class="input" type="password" placeholder="Password"/>
   </div>
+</div> -->
+{% for field in form %}
+<div class="input-div">
+  <div class="input">
+    <div class="input-fields">
+      {{ field.label_tag }} {{ field }}
+    </div>
+    <p>
+      {% if field.errors %}
+    <ul class="errorlist">
+      {% for error in field.errors %}
+      <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    </p>
+  </div>
 </div>
+{% endfor %}
 <a href="#">Forgot password ?</a>
 <a href="{% url 'register' %}">New User? Register here</a>
 <button type="submit" class="btn btn-primary mb-2">Login</button>
