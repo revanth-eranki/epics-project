@@ -1,11 +1,12 @@
-// Replace with your logic to fetch and display announcements, results, and courses
-function populateAnnouncements() {
-    // Fetch announcements and update the DOM
-}
+<script>
+    // Get the current URL path
+    var path = window.location.pathname;
 
-function populateResults() {
-    // Fetch results and update the DOM
-}
-
-function populateCourses() {
-    // Fetch courses and update the DOM
+    // Find the corresponding nav link and mark it as active
+    $('.nav-pills a').each(function() {
+        var href = $(this).attr('href');
+        if (path === href) {
+            $(this).addClass('active');
+        }
+    });
+</script>
