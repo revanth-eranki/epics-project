@@ -42,7 +42,7 @@
   </div>
 </div>
 {% endfor %}
-<a href="#">Forgot password ?</a>
+<a href="{% url 'password-reset' %}">Forgot password ?</a>
 <a href="{% url 'register' %}">New User? Register here</a>
 <button type="submit" class="btn btn-primary mb-2">Login</button>
 {% endblock %}
