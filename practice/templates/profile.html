@@ -31,7 +31,10 @@
           <div class="card-body">
             <p class="mb-0"><strong class="pr-1">Roll no: </strong>{{object.rollnumber}}</p>
             <p class="mb-0"><strong class="pr-1">Branch: </strong>{{object.branch}}</p>
-            <p class="mb-0"><strong class="pr-1">Section: </strong>A</p>
+            <p class="mb-0"><strong class="pr-1">Section: </strong>
+              {% if object.rollnumber.3 == 1 %}A{% else %}B
+              {% endif %}
+            </p>
           </div>
         </div>
       </div>
