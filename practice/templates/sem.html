@@ -8,6 +8,10 @@
    
 {% block body %}
     <div>
+      <!-- <div style="text-align: center;">
+        <h4>Semester {{current_sem}} Results</h4>
+    </div> -->
+    
     <table class="table table-striped table-hover">
         <thead>
           <tr>
@@ -18,25 +22,14 @@
           </tr>
         </thead>
         <tbody>
+          {% for i in context %}
           <tr>
-            <td scope="row">251</td>
-            <td>OOPS</td>
-            <td>4</td>
-            <td>A</td>
-
+            <td scope="row">{{i.0.course_id}}</td>
+            <td>{{i.0.course_name}}</td>
+            <td>{{i.0.credits}}</td>
+            <td>{{i.1.grades}}</td>
           </tr>
-          <tr>
-            <td scope="row">251</td>
-            <td>OOPS</td>
-            <td>4</td>
-            <td>A</td>
-          </tr>
-          <tr>
-            <td scope="row">251</td>
-            <td>OOPS</td>
-            <td>4</td>
-            <td>A</td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
       </div>

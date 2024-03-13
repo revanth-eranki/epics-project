@@ -22,12 +22,11 @@
 
             <div class="content active">
                 <div id="results-section" class="section active">
-                    <p class="section-text">Select your semester to view results:</p>
+                    <p class="section-text">Select semester to view results:</p>
                     <div class="results-button-container">
-                        <button class="results-button" data-semester="1"><a href="{% url 'sem' %}">Semister 1</a></button>
-                        <button class="results-button" data-semester="2">Semester 2</button>
-                        <button class="results-button" data-semester="3">Semester 3</button>
-                        <button class="results-button" data-semester="4">Semester 4</button>
+                        {% for i in num_times %}
+                        <button class="results-button" data-semester="{{forloop.counter}}"><a href="{% url 'sem' %}">Semester {{forloop.counter}} </a></button>
+                        {% endfor %}
                     </div>
                     <div id="results-container"></div>
                     <!-- <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">

@@ -20,14 +20,11 @@
                 </div>
                 
                 <div class="courses">
-                    <h2>Courses</h2>
+                    <h2>Currently Enrolled Courses</h2>
                     <ul class="course-list">
-                        <li><button>dsa</button></li>
-                        <li><button>dsa</button></li>
-                        <li><button>dsa</button></li>
-                        <li><button>dsa</button></li>
-                        <li><button>dsa</button></li>
-                        <li><button>dsa</button></li>
+                        {% for o in objects %}
+                        <li><button>{{ o.course_name }}</button></li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
