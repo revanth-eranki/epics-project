@@ -29,63 +29,9 @@
   </div>
 {% endfor %}
 
-<!-- 
-<div class="input-div" one>
-    <div class="i">
-      <i class="fas fa-user"></i>
-    </div>
-    <div>
-      <input name='first_name' class="input" type="text" placeholder="First Name" />
-    </div>
-</div>
 
-<div class="input-div" one>
-    <div class="i">
-      <i class="fas fa-user"></i>
-    </div>
-    <div>
-      <input name='last_name' class="input" type="text" placeholder="Last Name" />
-    </div>
-</div>
-
-<div class="input-div" one>
-    <div class="i">
-      <i class="fas fa-user"></i>
-    </div>
-    <div>
-      <input name='username' class="input" type="text" placeholder="Username" />
-    </div>
-</div>
-
-<div class="input-div" one>
-  <div class="i">
-    <i class="fas fa-user"></i>
-  </div>
-  <div>
-    <input name='email' class="input" type="email" placeholder="Email" />
-  </div>
-</div>
-
-<div class="input-div" two>
-  <div class="i">
-    <i class="fas fa-lock"></i>
-  </div>
-  <div>
-    <input name='password1' class="input" type="password" placeholder="Password"/>
-  </div>
-</div>
-
-<div class="input-div" two>
-    <div class="i">
-      <i class="fas fa-lock"></i>
-    </div>
-    <div>
-      <input name='password2' class="input" type="password" placeholder="Re-type Password"/>
-    </div>
-</div>
--->
-<p>
-    Already have an account?<a href="{% url 'login' %}">Login</a>
+<p style="color: white;">
+    Already have an account?<a class="login-links" href="{% url 'login' %}">Login</a>
 </p>
 <button type="submit" class="btn btn-primary mb-2">Register</button>
 {% endblock %}

@@ -1,24 +1,28 @@
 body {
-  background: #67B26F;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  padding: 0;
+  background: #67B26F;  
+  background: linear-gradient(to right, #4ca2cd, #67B26F);
+  /* background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);  */
+  /* background-color: #4158D0;*/
+  /* background-image: linear-gradient(0deg, rgb(24, 156, 177) 0%, #C850C0 35%, #FFCC70 100%);  */
+  /* background: linear-gradient( 46deg, #E9F1FA, #00ABE4, #FFFFFF); */
   margin: 0;
   font-family: 'Lato', sans-serif;
   color: #000;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  /* background-image: url('bgimg.avif'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;  */
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f2f2f2;
+  background-color: transparent;
   padding: 10px;
-  border-bottom: 1px solid #ccc;
-
 }
 
 .header-logo {
@@ -30,6 +34,7 @@ header {
   width: 75px;
   height: 75px;
   object-fit: cover;
+  border-radius: 50%;
 }
 
 .header-title {
@@ -131,7 +136,7 @@ main {
 
 .name {
   text-align: center;
-  padding: 20px;
+  padding: 14px;
 }
 
 .actual-content {
@@ -141,7 +146,7 @@ main {
 }
 
 .announcements, .courses {
-  flex: 1;
+  flex: 2;
   background-color: transparent;
   padding: 20px;
 }
@@ -151,29 +156,75 @@ main {
   text-align: center;
 }
 
+.announcements-content {
+  overflow: hidden;
+  text-align: center;
+}
+
+.announcements-content marquee {
+  display: block;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.announcements-content li {
+  list-style-type: none;
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.announcements-content li a {
+  text-decoration: none;
+  color: #333; /* Adjust color as needed */
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.announcements-content li a:hover {
+  background-color: #f0f0f0; /* Adjust hover background color as needed */
+}
+
+.announcements-content li img {
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+
 .course-list {
   margin: 0;
   padding: 0;
   list-style: none;
+  text-align: center;
+ 
+}
+
+.course-list ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   
 }
 
 .course-list li {
   margin-bottom: 10px;
-  
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  list-style-type: none;
+  padding: 10px auto;
 }
-.course-list li button{
-  width: 100%;
+.course-list li button {
+  width: 80%;
   height: 50px;
+  font-size: 24px;
+  text-transform: uppercase;
   border-radius: 15px;
-
+}
+.course-list-a{
+  text-decoration: none;
 }
 .course-list li button:hover{
   transform: scale(1.02);
+  background-color:   #d0e3f0;
+  transition: .5s all ease;
 }
 
-
-/* Customize colors, fonts, layout, and styling as desired */

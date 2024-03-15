@@ -29,32 +29,33 @@
                         {% endfor %}
                     </div>
                     <div id="results-container"></div>
-                    <!-- <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
-                            aria-controls="v-pills-home" aria-selected="true">Home</a>
-                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
-                            aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
-                            aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
-                            aria-controls="v-pills-settings" aria-selected="false">Settings</a>
-                    </div>
-                    <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">Helo
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">world</div>
-                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">lol</div>
-                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">lolll</div>
-                    </div> -->
+                    
                 </div>
             </div>
 
             <div class="content">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam omnis eveniet magni velit sap
-                    iente qui impedit vel temporibus eum, quas quos eius quibusdam, accusantium ullam facere o
-                    fficiis. Voluptas, voluptatibus quasi.
-                </p>
+                <svg viewBox="0 0 400 300">
+                    <!-- X-axis -->
+                    <line x1="50" y1="250" x2="450" y2="250" stroke="black" stroke-width="2" />
+                    <text x="50" y="270" class="axis-label"></text>
+                    <text x="150" y="270" class="axis-label">sem-1</text>
+                    <text x="250" y="270" class="axis-label">sem-2</text>
+                    <text x="350" y="270" class="axis-label">sem-3</text>
+                    <!-- Y-axis -->
+                    <line x1="50" y1="250" x2="50" y2="35" stroke="black" stroke-width="2" />
+                    <text x="30" y="250" class="axis-label">2</text>
+                    <text x="30" y="200" class="axis-label">4</text>
+                    <text x="30" y="150" class="axis-label">6</text>
+                    <text x="30" y="100" class="axis-label">8</text>
+                    <text x="30" y="50" class="axis-label">10</text>
+                    <!-- Line Graph -->
+                    <polyline class="line" points="150,200 250,100 350,150" />
+                    <!-- Points -->
+                    <circle cx="50" cy="250" r="4" class="point" />
+                    <circle cx="150" cy="200" r="4" class="point" />
+                    <circle cx="250" cy="100" r="4" class="point" />
+                    <circle cx="350" cy="150" r="4" class="point" />
+                </svg>
             </div>
         </div>
     </div>
@@ -77,5 +78,34 @@
 
         })
     </script>
+    <style>
+        svg {
+            width: 80%; 
+            height: 300px; 
+            margin: 0 auto;
+            padding-left: 150px;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+
+        .line {
+            fill: none;
+            stroke: white;
+            stroke-width: 2;
+        }
+
+        .axis-label {
+            font-size: 20px;
+            text-anchor: middle;
+        }
+
+        .point {
+            fill: black;
+            stroke: black;
+        }
+    </style>
 
 {% endblock %}

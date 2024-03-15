@@ -7,7 +7,7 @@
 
 {% block fields %}
 <img class="avator" src="{% static 'avator.svg' %}" />
-<h2>Howdy, Join us</h2>
+<h3 class="greeting">Howdy, Welcome back</h3>
 <!-- <div class="input-div" one>
   <div class="i">
     <i class="fas fa-user"></i>
@@ -42,7 +42,7 @@
   </div>
 </div>
 {% endfor %}
-<a href="{% url 'password-reset' %}">Forgot password ?</a>
-<a href="{% url 'register' %}">New User? Register here</a>
+<a class="login-links"  href="{% url 'password-reset' %}">Forgot password ?</a>
+<a class="login-links" href="{% url 'register' %}">New User? Register here</a>
 <button type="submit" class="btn btn-primary mb-2">Login</button>
 {% endblock %}

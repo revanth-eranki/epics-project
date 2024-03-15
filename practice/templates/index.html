@@ -17,13 +17,21 @@
             <div class="actual-content">
                 <div class="announcements">
                     <h2>Announcements</h2>
+                    <div class="announcements-content shadow p-3 mb-5 bg-white rounded">
+                        <marquee onmouseover="this.stop();" onmouseout="this.start();" direction="up" scrolldelay="150">
+                            <li class="list-group-item list-group-item-action list-group-item-dark"><a href="#" target="_blank">Mera Pehla Vote - Desh Ke Liye campaign ></a></li>
+                            <li class="list-group-item list-group-item-action list-group-item-light"><a href="#" target="_blank">Applications invited from interested candidates for the post of Senior Research Fellow (SRF) to work for the project “National Centre for Development of Advanced Materials and Manufacturing Processes for Clean Coal Technologies" </a></li>
+                            <li class="list-group-item list-group-item-action list-group-item-dark"><a href="#" target="_blank">Ideathon 2024 -NIT Andhra Pradesh by I&amp;E Cell and IIC </a></li>
+                            <li class="list-group-item list-group-item-action list-group-item-light">The open Ph.D. viva-voce examination of Mrs. KANDIPATI RAJANI, Roll No. PP051901, Part-time Research Scholar in the Department of Electrical Engineering under the guidance of Dr. Tejavathu Ramesh, is scheduled on 15.03.2024 (i.e. Friday) at 10.30 AM in the Department of Electrical Engineering, SRK Academic Complex</li>
+                        </marquee>
+                    </div>
                 </div>
                 
                 <div class="courses">
                     <h2>Currently Enrolled Courses</h2>
                     <ul class="course-list">
                         {% for o in objects %}
-                        <li><button>{{ o.course_name }}</button></li>
+                        <li><button><a class="course-list-a" href="{% static 'dsa.png' %}" target="_blank">{{ o.course_name }}</a></button></li>
                         {% endfor %}
                     </ul>
                 </div>
